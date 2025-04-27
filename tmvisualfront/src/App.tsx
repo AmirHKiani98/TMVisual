@@ -5,7 +5,7 @@ import GraphCanvas from './components/canvas/GraphCanvas';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ position: 'relative' }}>
       <GraphCanvas />
     </div>
   );

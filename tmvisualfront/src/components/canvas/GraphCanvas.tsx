@@ -23,11 +23,9 @@ const initialEdges = [
 
 const GraphCanvas = () => {
   return (
-    <div style={{ width: '100%', height: '90vh' }}>
+    <div style={{ width: '100%', height: '100vh' }}>
       <ReactFlow nodes={initialNodes} edges={initialEdges} fitView>
         <Background />
-        <Controls />
-        <MiniMap />
       </ReactFlow>
     </div>
   );
