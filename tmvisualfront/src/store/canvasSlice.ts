@@ -16,19 +16,19 @@ const initialState: CanvasState = {
       id: '1',
       type: 'circle',
       position: { x: 0, y: 0 },
-      data: { label: 'Node 1', settings: { color: 'red' } },
+      data: { label: '1', settings: { color: 'red' } },
     },
     {
       id: '2',
       type: 'circle',
       position: { x: 100, y: 100 },
-      data: { label: 'Node 2', settings: { color: 'blue' } },
+      data: { label: '2', settings: { color: 'blue' } },
     },
     {
       id: '3',
       type: 'circle',
       position: { x: 200, y: 200 },
-      data: { label: 'Node 3', settings: { color: 'green' } },
+      data: { label: '3', settings: { color: 'green' } },
     },
   ],
   edges: [
