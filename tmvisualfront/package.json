@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pixi/react": "^8.0.1",
     "@reduxjs/toolkit": "^2.7.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -15,6 +16,7 @@
     "antd": "^5.24.8",
     "axios": "^1.9.0",
     "dagre": "^0.8.5",
+    "pixi.js": "^8.9.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",

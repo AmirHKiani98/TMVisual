@@ -7,6 +7,7 @@ interface CanvasState {
   nodes: NodeType[];
   edges: EdgeType[];
   selectedNodeId: string | null;
+  selectedNodePosition: { x: number; y: number } | null; // Add this
 }
 
 const initialState: CanvasState = {
@@ -43,17 +44,22 @@ const initialState: CanvasState = {
       source: '2',
       target: '3',
       type: 'straight',
-    }
+    },
   ],
   selectedNodeId: null,
+  selectedNodePosition: null, // Initialize as null
 };
 
 const canvasSlice = createSlice({
   name: 'canvas',
   initialState,
   reducers: {
-    selectNode(state, action: PayloadAction<string | null>) {
-      state.selectedNodeId = action.payload;
+    selectNode(
+      state,
+      action: PayloadAction<{ id: string | null; position: { x: number; y: number } | null }>
+    ) {
+      state.selectedNodeId = action.payload.id;
+      state.selectedNodePosition = action.payload.position;
     },
     updateNodeSettings(state, action: PayloadAction<{ nodeId: string; field: string; value: any }>) {
       const { nodeId, field, value } = action.payload;

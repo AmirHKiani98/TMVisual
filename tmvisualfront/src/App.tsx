@@ -1,14 +1,27 @@
-// src/App.tsx
-import React from 'react';
-import './App.css';
-import GraphCanvas from './components/canvas/GraphCanvas';
+import {
+  Application,
+  extend,
+} from '@pixi/react';
+import {
+  Container,
+  Graphics,
+  Sprite,
+} from 'pixi.js';
 
-function App() {
+import PixiCanvas from './components/canvas/PixiCanvas';
+// extend tells @pixi/react what Pixi.js components are available
+extend({
+  Container,
+  Graphics,
+  Sprite,
+});
+
+export default function App() {
   return (
-    <div className="App" style={{ position: 'relative' }}>
-      <GraphCanvas />
-    </div>
+      // We'll wrap our components with an <Application> component to provide
+      // the Pixi.js Application context
+      <Application>
+          <PixiCanvas></PixiCanvas>
+      </Application>
   );
 }
-
-export default App;

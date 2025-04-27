@@ -1,8 +1,8 @@
 html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100%; /* THIS IS MISSING */
-  width: 100%;
+  height: 100%; /* Ensure full height */
+  width: 100%;  /* Ensure full width */
 }
 
 .App {
