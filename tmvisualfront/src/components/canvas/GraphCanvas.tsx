@@ -1,5 +1,7 @@
 // src/components/canvas/GraphCanvas.tsx
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { selectNode } from '../store/canvasSlice';
 import ReactFlow, { Background, Controls, MiniMap } from 'reactflow';
 import 'reactflow/dist/style.css';
 
@@ -8,7 +10,7 @@ const initialNodes = [
     id: '1',
     type: 'input',
     data: { label: 'Start Node' },
-    position: { x: 250, y: 5 },
+    position: { x: 100, y: 5 },
   },
   {
     id: '2',
