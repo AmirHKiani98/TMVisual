@@ -31,7 +31,6 @@ const GraphCanvas = () => {
       >
         <Background />
         <Controls />
-        <MiniMap />
       </ReactFlow>
     </div>
   );
