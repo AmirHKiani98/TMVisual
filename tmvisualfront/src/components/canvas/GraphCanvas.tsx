@@ -1,33 +1,37 @@
 // src/components/canvas/GraphCanvas.tsx
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectNode } from '../../store/canvasSlice';
+import { RootState } from '../../store';
 import ReactFlow, { Background, Controls, MiniMap } from 'reactflow';
 import 'reactflow/dist/style.css';
+import CircleNode from './nodeTypes/CircleNode';
 
-const initialNodes = [
-  {
-    id: '1',
-    type: 'input',
-    data: { label: 'Start Node' },
-    position: { x: 100, y: 5 },
-  },
-  {
-    id: '2',
-    data: { label: 'Second Node' },
-    position: { x: 100, y: 100 },
-  },
-];
-
-const initialEdges = [
-  { id: 'e1-2', source: '1', target: '2' },
-];
+const nodeTypes = {
+  circle: CircleNode,
+};
 
 const GraphCanvas = () => {
+  const dispatch = useDispatch();
+  const nodes = useSelector((state: RootState) => state.canvas.nodes);
+  const edges = useSelector((state: RootState) => state.canvas.edges);
+
+  const handleNodeClick = (_: any, node: any) => {
+    dispatch(selectNode(node.id));
+  };
+
   return (
     <div style={{ width: '100%', height: '100vh' }}>
-      <ReactFlow nodes={initialNodes} edges={initialEdges} fitView>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        fitView
+        onNodeClick={handleNodeClick}
+      >
         <Background />
+        <Controls />
+        <MiniMap />
       </ReactFlow>
     </div>
   );
