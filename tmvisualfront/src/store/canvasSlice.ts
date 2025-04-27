@@ -31,7 +31,20 @@ const initialState: CanvasState = {
       data: { label: 'Node 3', settings: { color: 'green' } },
     },
   ],
-  edges: [],
+  edges: [
+    {
+      id: 'e1-2',
+      source: '1',
+      target: '2',
+      type: 'straight',
+    },
+    {
+      id: 'e2-3',
+      source: '2',
+      target: '3',
+      type: 'straight',
+    }
+  ],
   selectedNodeId: null,
 };
 
